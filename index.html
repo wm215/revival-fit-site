@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Revival Fit — Strength • Stillness • Spirit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Revival Fit is a disciplined system for rebuilding your body, mind, and purpose through Strength, Stillness, and Spirit.">
+  <style>
+    :root {
+      --bg-dark: #050608;
+      --bg-light: #F5F2EC;
+      --text-main: #F9F9F9;
+      --text-dark: #151515;
+      --accent-sand: #D5C8B4;
+      --accent-steel: #2A3B47;
+      --accent-copper: #B27457;
+      --max-width: 960px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", "Segoe UI", sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      padding: 24px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .logo {
+      letter-spacing: 0.2em;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      color: var(--accent-sand);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #A8ADB5;
+      margin-left: 24px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    nav a:hover {
+      color: var(--accent-sand);
+    }
+
+    main {
+      flex: 1;
+    }
+
+    .hero {
+      padding: 80px 24px 96px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 48px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #9EA3AA;
+      margin-bottom: 12px;
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 4vw, 3.5rem);
+      line-height: 1.1;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero-subtitle {
+      margin-top: 16px;
+      color: #C3C7CF;
+      max-width: 420px;
+      font-size: 0.98rem;
+    }
+
+    .hero-actions {
+      margin-top: 32px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .btn-primary {
+      border: 1px solid var(--accent-sand);
+      padding: 12px 26px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.75rem;
+      background: transparent;
+      color: var(--text-main);
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-sand);
+      color: var(--bg-dark);
+      transition: background 140ms ease-out, color 140ms ease-out;
+    }
+
+    .btn-ghost {
+      border: none;
+      padding: 8px 0;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #A8ADB5;
+      background: none;
+      cursor: pointer;
+    }
+
+    .btn-ghost span {
+      border-bottom: 1px solid #4C5057;
+      padding-bottom: 4px;
+    }
+
+    .hero-tagline {
+      margin-top: 12px;
+      font-size: 0.8rem;
+      color: #7B8088;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .hero-panel {
+      border: 1px solid #252830;
+      padding: 24px 20px;
+      border-radius: 18px;
+      background: radial-gradient(circle at top left, #151720 0, #050608 55%);
+    }
+
+    .hero-panel-title {
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #AEB3BA;
+      margin-bottom: 12px;
+    }
+
+    .pillars-list {
+      display: grid;
+      gap: 12px;
+      margin: 18px 0;
+    }
+
+    .pillar-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #23262E;
+      padding: 8px 0;
+    }
+
+    .pillar-label {
+      font-size: 0.85rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent-sand);
+    }
+
+    .pillar-desc {
+      font-size: 0.82rem;
+      color: #9FA4AC;
+      margin-top: 4px;
+    }
+
+    .chip {
+      border-radius: 999px;
+      border: 1px solid #3A3F48;
+      padding: 4px 12px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #9EA3AA;
+    }
+
+    section {
+      padding: 72px 24px;
+    }
+
+    .section-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .section-eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #9EA3AA;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .section-body {
+      font-size: 0.96rem;
+      color: #C3C7CF;
+      max-width: 680px;
+    }
+
+    .pillars-grid {
+      margin-top: 36px;
+      display: grid;
+      gap: 28px;
+    }
+
+    @media (min-width: 768px) {
+      .pillars-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .pillar-card {
+      border-top: 1px solid #2D3038;
+      padding-top: 18px;
+    }
+
+    .pillar-name {
+      font-size: 0.85rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent-sand);
+      margin-bottom: 10px;
+    }
+
+    .pillar-copy {
+      font-size: 0.9rem;
+      color: #AEB3BA;
+    }
+
+    .system-section {
+      background: var(--bg-light);
+      color: var(--text-dark);
+    }
+
+    .system-section .section-title {
+      color: var(--text-dark);
+    }
+
+    .system-section .section-body {
+      color: #464545;
+    }
+
+    .system-grid {
+      margin-top: 32px;
+      display: grid;
+      gap: 32px;
+    }
+
+    @media (min-width: 768px) {
+      .system-grid {
+        grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      }
+    }
+
+    .system-list {
+      list-style: none;
+      margin-top: 12px;
+      display: grid;
+      gap: 8px;
+      font-size: 0.9rem;
+    }
+
+    .system-list li::before {
+      content: "— ";
+      color: var(--accent-steel);
+    }
+
+    .system-card {
+      border-radius: 18px;
+      border: 1px solid #DEDBD4;
+      padding: 20px 18px;
+      background: #F9F7F2;
+      font-size: 0.86rem;
+      color: #565349;
+    }
+
+    .system-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #8B8377;
+      margin-bottom: 8px;
+    }
+
+    .about-section {
+      background: var(--bg-dark);
+    }
+
+    .about-grid {
+      display: grid;
+      gap: 32px;
+      align-items: center;
+      margin-top: 32px;
+    }
+
+    @media (min-width: 768px) {
+      .about-grid {
+        grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      }
+    }
+
+    .about-block {
+      font-size: 0.95rem;
+      color: #C2C5CD;
+    }
+
+    .about-block p + p {
+      margin-top: 12px;
+    }
+
+    .about-tag {
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #7E828B;
+      margin-bottom: 8px;
+    }
+
+    .about-mock {
+      border-radius: 18px;
+      border: 1px solid #23262E;
+      padding: 24px 18px;
+      background: radial-gradient(circle at top left, #181B24 0, #050608 60%);
+      color: #D5D8E0;
+      font-size: 0.86rem;
+    }
+
+    .about-mock-title {
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #9EA3AA;
+      margin-bottom: 10px;
+    }
+
+    .about-mock-body p + p {
+      margin-top: 8px;
+    }
+
+    .contact-section {
+      background: #06070A;
+      border-top: 1px solid #1D2027;
+    }
+
+    .contact-grid {
+      display: grid;
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    @media (min-width: 640px) {
+      .contact-grid {
+        grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      }
+    }
+
+    form {
+      display: grid;
+      gap: 12px;
+    }
+
+    label {
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #898E97;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px 10px;
+      border-radius: 8px;
+      border: 1px solid #2C3038;
+      background: #050609;
+      color: var(--text-main);
+      font-size: 0.9rem;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    footer {
+      border-top: 1px solid #151721;
+      padding: 18px 24px 28px;
+      font-size: 0.78rem;
+      color: #787E87;
+    }
+
+    footer .inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="logo">REVIVAL FIT</div>
+      <nav>
+        <a href="#framework">Framework</a>
+        <a href="#system">System</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-inner">
+          <div>
+            <div class="eyebrow">Strength • Stillness • Spirit</div>
+            <h1 class="hero-title">Revival Fit</h1>
+            <p class="hero-subtitle">
+              A disciplined system for rebuilding your body, your mind, and your purpose — without hype, noise, or chaos.
+            </p>
+            <div class="hero-actions">
+              <button class="btn-primary" onclick="window.open('https://system.revival.fit','_blank')">
+                Launch The Revival System
++              </button>
++              <button class="btn-ghost" onclick="document.getElementById('framework').scrollIntoView({behavior:'smooth'});">
++                <span>Explore the Framework</span>
++              </button>
++            </div>
++            <div class="hero-tagline">
++              Minimal. Grounded. Repeatable.
++            </div>
++          </div>
++          <div class="hero-panel">
++            <div class="hero-panel-title">The Revival Pillars</div>
++            <div class="pillars-list">
++              <div class="pillar-row">
++                <div>
++                  <div class="pillar-label">Strength</div>
++                  <div class="pillar-desc">Training, macros, and a body that can carry the life you want.</div>
++                </div>
++                <div class="chip">Body</div>
++              </div>
++              <div class="pillar-row">
++                <div>
++                  <div class="pillar-label">Stillness</div>
++                  <div class="pillar-desc">Grounding, emotional regulation, and mental clarity.</div>
++                </div>
++                <div class="chip">Mind</div>
++              </div>
++              <div class="pillar-row">
++                <div>
++                  <div class="pillar-label">Spirit</div>
++                  <div class="pillar-desc">Identity, direction, and aligned masculine presence.</div>
++                </div>
++                <div class="chip">Purpose</div>
++              </div>
++            </div>
++          </div>
++        </div>
++      </section>
++
++      <!-- FRAMEWORK -->
++      <section id="framework">
++        <div class="section-inner">
++          <div class="section-eyebrow">Framework</div>
++          <h2 class="section-title">The Revival Framework</h2>
++          <p class="section-body">
++            Revival Fit is built on a simple idea: real change happens when your body, mind, and purpose stop fighting each other and start working in the same direction. The framework stays minimal on purpose, so you can actually live it.
++          </p>
++
++          <div class="pillars-grid">
++            <div class="pillar-card">
++              <div class="pillar-name">Strength</div>
++              <div class="pillar-copy">
++                Intentional training, simple nutrition, and recovery that respects your nervous system. You get realistic blocks, not punishment cycles. The focus: repeatable effort, not performance for show.
++              </div>
++            </div>
++            <div class="pillar-card">
++              <div class="pillar-name">Stillness</div>
++              <div class="pillar-copy">
++                Grounding, emotional regulation, and internal quiet. You learn how to regulate before you perform — using trauma-aware, non-clinical tools that help you stay present instead of spiraling.
++              </div>
++            </div>
++            <div class="pillar-card">
++              <div class="pillar-name">Spirit</div>
++              <div class="pillar-copy">
++                Values, direction, and identity. Who you are becoming and how you choose to move. Spirit is where discipline stops being a chore and starts being an expression of who you are.
++              </div>
++            </div>
++          </div>
++        </div>
++      </section>
++
++      <!-- SYSTEM -->
++      <section id="system" class="system-section">
++        <div class="section-inner">
++          <div class="section-eyebrow">The System</div>
++          <h2 class="section-title">The Revival System</h2>
++          <p class="section-body">
++            The Revival System is a single, integrated flow — hosted as an intelligent assistant — that adapts to your day. It checks where you are, routes you to Strength, Stillness, or Spirit, and gives you a plan you can actually follow.
++          </p>
++
++          <div class="system-grid">
++            <div>
++              <ul class="system-list">
++                <li>Personalized training blocks (4–12 weeks).</li>
++                <li>Simple macro and nutrition structure.</li>
++                <li>Grounding and emotional regulation when you are overloaded.</li>
++                <li>Impulse-control and reset protocols for difficult days.</li>
++                <li>Identity, values, and direction check-ins.</li>
++                <li>Daily and weekly discipline plans that respect your capacity.</li>
++              </ul>
++              <div style="margin-top:24px;">
++                <button class="btn-primary" onclick="window.open('https://system.revival.fit','_blank')">
++                  Launch The Revival System
++                </button>
++              </div>
++            </div>
++            <div class="system-card">
++              <div class="system-label">Session Flow</div>
++              <p><strong>Check-in:</strong> body, mind, focus, and what you need most today.</p>
++              <p><strong>Route:</strong> Strength, Stillness, or Spirit based on what is real, not what you think you “should” do.</p>
++              <p><strong>Structure:</strong> a clear plan for today and simple direction for the next few days.</p>
++              <p><strong>Close:</strong> one grounded line and one concrete commitment — nothing loud, just honest discipline.</p>
++            </div>
++          </div>
++        </div>
++      </section>
++
++      <!-- ABOUT -->
++      <section id="about" class="about-section">
++        <div class="section-inner">
++          <div class="section-eyebrow">About</div>
++          <h2 class="section-title">Built From Real Rebuilding</h2>
++
++          <div class="about-grid">
++            <div class="about-block">
++              <div class="about-tag">The Point</div>
++              <p>
++                Revival Fit comes out of actual rebuilding — physically, mentally, and spiritually. It is not theory. It is the result of doing the work, burning out, starting over, and choosing a quieter, more honest kind of strength.
++              </p>
++              <p>
++                The system is trauma-aware without making trauma your entire identity. It respects therapy, nervous system reality, and the fact that some days you need Stillness more than more weight on the bar.
++              </p>
++              <p>
++                The goal is simple: a stronger body, a steadier mind, and a clearer sense of who you are becoming — built through discipline that is quiet, repeatable, and grounded in real life.
++              </p>
++            </div>
++            <div class="about-mock">
++              <div class="about-mock-title">How it feels in practice</div>
++              <div class="about-mock-body">
++                <p>One day, the system asks for a 45-minute strength session with simple macros.</p>
++                <p>Another day, when your mind is wrecked, it pulls you into Stillness — breath, grounding, and a small, honest action.</p>
++                <p>When you feel lost, it moves you into Spirit — values, direction, and a single move that brings you back into alignment.</p>
++              </div>
++            </div>
++          </div>
++        </div>
++      </section>
++
++      <!-- CONTACT -->
++      <section id="contact" class="contact-section">
++        <div class="section-inner">
++          <div class="section-eyebrow">Contact</div>
++          <h2 class="section-title">Stay In The Loop</h2>
++          <p class="section-body">
++            If you want to stay updated on new tools, programs, or ways to work with Revival Fit, leave a note here.
++          </p>
++
++          <div class="contact-grid">
++            <form>
++              <div>
++                <label for="name">Name</label>
++                <input id="name" name="name" type="text" placeholder="Your name">
++              </div>
++              <div>
++                <label for="email">Email</label>
++                <input id="email" name="email" type="email" placeholder="you@example.com">
++              </div>
++              <div>
++                <label for="message">Message</label>
++                <textarea id="message" name="message" placeholder="Tell me what you are looking for."></textarea>
++              </div>
++              <div>
++                <button type="submit" class="btn-primary">Submit</button>
++              </div>
++            </form>
++            <div>
++              <p style="font-size:0.88rem; color:#9EA3AA;">
++                This form is intentionally simple. No funnels, no noise — just a direct way to reach out if you want to connect, collaborate, or hear what is coming next under the Revival Fit umbrella.
++              </p>
++            </div>
++          </div>
++        </div>
++      </section>
++    </main>
++
++    <footer>
++      <div class="inner">
++        <div>© Revival Fit, 2025. All rights reserved.</div>
++        <div>Strength • Stillness • Spirit</div>
++      </div>
++    </footer>
++  </div>
++</body>
++</html>
